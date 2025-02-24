@@ -70,8 +70,8 @@
 
 # Referensi
 
-    - CyberOps Associate: Module 16 – Attacking the Foundation (itexamanswers.net)
-    - TCP Connection Establishment(www.prepbytes.com)
-    - TCP/IP: Transmission Control Protocol/Internet Protocol (online.binus.ac.id)
+- CyberOps Associate: Module 16 – Attacking the Foundation (itexamanswers.net)
+- TCP Connection Establishment(www.prepbytes.com)
+- TCP/IP: Transmission Control Protocol/Internet Protocol (online.binus.ac.id)
 
    
