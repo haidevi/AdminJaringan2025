@@ -1,5 +1,6 @@
 <div align="center">
   <h1 style="text-align: center;font-weight: bold">Laporan Workshop Administrasi Jaringan<br></h1>
+  <h2 style="text-align: center;">Tugas Review<br></h2>
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 <br />
@@ -67,3 +68,7 @@
     - FIN: Penerima ACK mengirimkan paket FIN tanda menutup koneksi.
     - ACK: Pihak pertama mengirimkan paket ACK sebagai konfirmasi pemutusan koneksi.
 
+# Referensi
+    - https://itexamanswers.net/cyberops-associate-module-16-attacking-the-foundation.html
+    - https://www.prepbytes.com/blog/computer-network/tcp-connection-establishment/#:~:text=The%20key%20steps%20in%20TCP%20connection%20establishment%20are,an%20acknowledgment%20%28ACK%29%20packet%20to%20the%20server.%20
+    - https://online.binus.ac.id/computer-science/2021/09/24/tcp-ip-transmission-control-protocol-internet-protocol/
