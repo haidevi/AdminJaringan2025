@@ -70,8 +70,8 @@
 
 # Referensi
 
-    - https://itexamanswers.net/cyberops-associate-module-16-attacking-the-foundation.html/
-    
-    - https://www.prepbytes.com/blog/computer-network/tcp-connection-establishment/#:~:text=The%20key%20steps%20in%20TCP%20connection%20establishment%20are,an%20acknowledgment%20%28ACK%29%20packet%20to%20the%20server.%20/
-    
-    - https://online.binus.ac.id/computer-science/2021/09/24/tcp-ip-transmission-control-protocol-internet-protocol/
+    - CyberOps Associate: Module 16 – Attacking the Foundation (itexamanswers.net)
+    - TCP Connection Establishment(www.prepbytes.com)
+    - TCP/IP: Transmission Control Protocol/Internet Protocol (online.binus.ac.id)
+
+   
