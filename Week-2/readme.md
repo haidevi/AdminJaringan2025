@@ -17,33 +17,52 @@
 <br>
 
 1. Meminta alamat IP dari DHCP server
+    
     ![img](../assets/week-2/1.jpeg)
+
 2. Melakukan instalisasi git dan depedensi
+    
     ![img](../assets/week-2/2.jpeg)
+
 3. Melakukan git clone
+    
     ![img](../assets/week-2/3.jpeg)
+
 4. Download VirtualBox untuk linux dan pilih debian 12
+    
     ![img](../assets/week-2/4.jpeg)
     
     Buka menggunakan terminal
+
     ![img](../assets/week-2/vb.jpeg)
 5. Download ISO Debian
+    
     ![img](../assets/week-2/5.jpeg)
+
 6. Melakukan intalisasi paket VirtualBox menggunakan dpkg
+    
     ![img](../assets/week-2/6.jpeg)
+
 7. Masih terdapat error ketika VirtualBox dijalankan
-    ![img](../assets/week-2/7.png) 
+   
+    ![img](../assets/week-2/7.png)
+
 8. Terjadi error saat akan menjalankan debian
+    
     ![img](../assets/week-2/error.png) 
     ![img](../assets/week-2/8.jpeg)
     ![img](../assets/week-2/9.jpeg)
+
 9. Melakukan pembuatan mesin virtual di VirtualBox
+    
     ![img](../assets/week-2/db1.png)
     ![img](../assets/week-2/db2.png)
     ![img](../assets/week-2/db3.png)
     ![img](../assets/week-2/db4.png)
     ![img](../assets/week-2/db5.png)
+
 10. Melakukan instalisasi debian
+
     ![img](../assets/week-2/11.jpeg)
     ![img](../assets/week-2/12.jpeg)
     ![img](../assets/week-2/13.jpeg)
