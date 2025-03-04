@@ -47,13 +47,13 @@
    
     ![img](../assets/week-2/7.png)
 
-8. Terjadi error saat akan menjalankan debian
+8. Terjadi error karena driver kernel belum terinstall atau tidak dimuat dengan benar.
     
     ![img](../assets/week-2/error.png) 
     ![img](../assets/week-2/8.jpeg)
     ![img](../assets/week-2/9.jpeg)
 
-9. Melakukan pembuatan mesin virtual di VirtualBox
+9. Melakukan pembuatan mesin virtual di VirtualBox dan pengaturan disesuaikan dengan hadware dan hardisk. 
     
     ![img](../assets/week-2/db1.png)
     ![img](../assets/week-2/db2.png)
