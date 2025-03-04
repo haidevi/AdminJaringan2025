@@ -24,6 +24,7 @@
     ![img](../assets/week-2/3.jpeg)
 4. Download VirtualBox untuk linux dan pilih debian 12
     ![img](../assets/week-2/4.jpeg)
+    
     Buka menggunakan terminal
     ![img](../assets/week-2/vb.jpeg)
 5. Download ISO Debian
@@ -31,19 +32,18 @@
 6. Melakukan intalisasi paket VirtualBox menggunakan dpkg
     ![img](../assets/week-2/6.jpeg)
 7. Masih terdapat error ketika VirtualBox dijalankan
-    ![img](../assets/week-2/7.png)
-8. Keterangan
+    ![img](../assets/week-2/7.png) 
+8. Terjadi error saat akan menjalankan debian
+    ![img](../assets/week-2/error.png) 
     ![img](../assets/week-2/8.jpeg)
-9. Terjadi error saat akan menjalankan debian
-    ![img](../assets/week-2/error.png)
     ![img](../assets/week-2/9.jpeg)
-10. Melakukan pembuatan mesin virtual di VirtualBox
+9. Melakukan pembuatan mesin virtual di VirtualBox
     ![img](../assets/week-2/db1.png)
     ![img](../assets/week-2/db2.png)
     ![img](../assets/week-2/db3.png)
     ![img](../assets/week-2/db4.png)
     ![img](../assets/week-2/db5.png)
-11. Melakukan instalisasi debian
+10. Melakukan instalisasi debian
     ![img](../assets/week-2/11.jpeg)
     ![img](../assets/week-2/12.jpeg)
     ![img](../assets/week-2/13.jpeg)
