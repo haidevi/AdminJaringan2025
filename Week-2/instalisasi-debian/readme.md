@@ -64,5 +64,5 @@
 10. Melakukan instalisasi debian
 
     ![img](/assets/week-2/11.jpeg)
-    ![img](./assets/week-2/12.jpeg)
+    ![img](/assets/week-2/12.jpeg)
     ![img](/assets/week-2/13.jpeg)
