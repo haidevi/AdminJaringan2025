@@ -27,39 +27,39 @@ Dalam dunia teknis, istilah yang benar adalah direktori, bukan folder. Nama path
 ## Memasang dan Melepas Pemasangan Sistem Berkas
 Filesystem terdiri dari beberapa bagian yang lebih kecil, masing-masing berisi satu direktori beserta subdirektori dan file di dalamnya. Struktur keseluruhan disebut file tree, sedangkan filesystem mengacu pada cabang-cabang yang terhubung ke pohon tersebut. Untuk menghubungkan filesystem ke file tree, dapat menggunakan perintah mount. Perintah ini menghubungkan direktori dalam file tree yang ada (mount point) ke root dari filesystem baru.
     
-    ```
-    # Mount the filesystem on /dev/sda4 to /users
-      mount /dev/sda4 /users
-    ```
+```
+# Mount the filesystem on /dev/sda4 to /users
+mount /dev/sda4 /users
+```
 
 Untuk melepas pemasangan, digunakan perintah umount. Opsi umount -l (lazy unmount) akan menghapus sistem berkas dari hierarki tetapi menunggu hingga tidak digunakan sebelum benar-benar dilepas. Jika sistem berkas masih sibuk, umount -f dapat digunakan untuk memaksa unmount. Alternatifnya, gunakan lsof atau fuser untuk menemukan proses yang masih menggunakan sistem berkas sebelum menghentikannya.
     
-    ```
-    # Find out which processes are using the filesystem
+```
+# Find out which processes are using the filesystem
  
-    abdou@debian:~$ lsof /home/abdou
+abdou@debian:~$ lsof /home/abdou
 
-    COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
-    bash     1000 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
-    bash     1000 abdou  rtd    DIR    8,1     4096  131073 /home/abdou
-    bash     1000 abdou  txt    REG    8,1   103752  131072 /bin/bash
-    bash     1000 abdou  mem    REG    8,1  1848400  131074 /lib/x86_64-linux-gnu/libc-2.28.so
-    bash     1000 abdou  mem    REG    8,1   170864  131075 /lib/x86_64-linux-gnu/ld-2.28.so
-    code     1234 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
-    msedge   5678 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
-    ```
+COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+bash     1000 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
+bash     1000 abdou  rtd    DIR    8,1     4096  131073 /home/abdou
+bash     1000 abdou  txt    REG    8,1   103752  131072 /bin/bash
+bash     1000 abdou  mem    REG    8,1  1848400  131074 /lib/x86_64-linux-gnu/libc-2.28.so
+bash     1000 abdou  mem    REG    8,1   170864  131075 /lib/x86_64-linux-gnu/ld-2.28.so
+code     1234 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
+msedge   5678 abdou  cwd    DIR    8,1     4096  131073 /home/abdou
+```
 
 Untuk menyelidiki proses yang menggunakan sistem berkas, dapat menggunakan perintah ps.
    
-    ```
-    # Investigate the processes that are using the filesystem
-    abdou@debian:~$ ps up "1234 5678 91011"
+```
+# Investigate the processes that are using the filesystem
+abdou@debian:~$ ps up "1234 5678 91011"
 
-    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-    abdou     1234  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 code
-    abdou     5678  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 msedge
-    abdou     91011  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 chrome
-    ```
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+abdou     1234  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 code
+abdou     5678  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 msedge
+abdou     91011  0.0  0.0  12345  1234 ?        Ssl  00:00   0:00 chrome
+```
 
 ## Pengroganisasian Pohon Berkas
 Sistem UNIX memiliki struktur pohon berkas yang kurang terorganisir dengan baik, dengan berbagai konvensi penamaan yang tidak seragam dan penyebaran file yang acak. Hal ini membuat proses upgrade sistem operasi menjadi sulit. Root filesystem mencakup direktori root (/) dan sejumlah file serta subdirektori minimal. Kernel OS biasanya berada di /boot, meskipun lokasinya bisa berbeda-beda. Direktori penting lainnya meliputi:
@@ -90,10 +90,10 @@ Sebagian besar implementasi sistem berkas mendefinisikan tujuh jenis berkas:
 
 Anda dapat menentukan jenis suatu file dengan menggunakan perintah file (ketik man file untuk informasi lebih lanjut).
     
-    ```
-    $ file /bin/bash
-    bin/bash: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=33a5554034feb2af38e8c75872058883b2988bc5, for GNU/Linux 3.2.0, stripped
-    ```
+```
+$ file /bin/bash
+bin/bash: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=33a5554034feb2af38e8c75872058883b2988bc5, for GNU/Linux 3.2.0, stripped
+```
 Anda juga dapat menggunakan ls -ld, di mana opsi -d memaksa ls untuk menampilkan informasi tentang direktori itu sendiri, bukan isi direktori tersebut.
 
 ![img](/assets/week-2/ch5-3.png)
@@ -101,9 +101,9 @@ Anda juga dapat menggunakan ls -ld, di mana opsi -d memaksa ls untuk menampilkan
 File biasa menyimpan data tanpa struktur tertentu. Direktori berfungsi sebagai referensi ke file lain. Hard link memungkinkan satu file memiliki banyak nama, dan bisa dibuat menggunakan perintah ln.
 contoh:
    
-    ```
-    $ ln /etc/passwd /tmp/passwd
-    ```
+```
+$ ln /etc/passwd /tmp/passwd
+```
 
 File perangkat (device files) memungkinkan program berkomunikasi dengan perangkat keras dan periferal sistem. Kernel memuat driver untuk mengelola perangkat ini agar tetap abstrak dan tidak bergantung pada perangkat keras tertentu.
 File perangkat dibedakan menjadi character device dan block device, tetapi perbedaannya tidak terlalu penting untuk dibahas secara rinci. Setiap file perangkat memiliki major number (menentukan driver perangkat) dan minor number (menentukan unit fisik yang dikontrol). Misalnya, pada Linux, major number 4 digunakan untuk driver serial, di mana /dev/tty0 memiliki minor number 0 dan /dev/tty1 memiliki minor number 1.
@@ -112,12 +112,12 @@ Local domain sockets memungkinkan komunikasi antarproses dalam satu host, mirip 
 Named pipes bekerja seperti local domain sockets untuk komunikasi antarproses dalam satu sistem.
 Symbolic links (soft links) adalah referensi ke file berdasarkan nama, lebih fleksibel dibanding hard links karena dapat menunjuk ke file di sistem file berbeda dan juga ke direktori. Misalnya, /usr/bin sering kali merupakan symbolic link ke /bin, yang membantu menghemat ruang root filesystem dan memungkinkan berbagi perangkat lunak antar host dengan lebih mudah.
  
-    ```
-    $ ln -s /bin /usr/bin
+```
+$ ln -s /bin /usr/bin
 
-    $ ls -l /usr/bin
-    lrwxrwxrwx 1 root root 4 Mar  1  2020 /usr/bin -> /bin
-    ```
+$ ls -l /usr/bin
+lrwxrwxrwx 1 root root 4 Mar  1  2020 /usr/bin -> /bin
+```
 ## Atribut File
 Setiap file dalam sistem Unix dan Linux memiliki **mode file**, terdiri dari **9 bit izin akses** (baca, tulis, eksekusi) dan **3 bit tambahan** untuk eksekusi program. Ditambah **4 bit tipe file**, yang tetap sejak file dibuat. Pemilik file atau superuser dapat mengubah mode file dengan `chmod`.
 
@@ -127,9 +127,9 @@ Permission bits terdiri dari tiga kelompok: **owner (u)**, **group (g)**, dan **
 
 Pada file biasa, **read (r)** memungkinkan membaca file, **write (w)** memungkinkan mengubah atau menghapus isinya, dan **execute (x)** memungkinkan menjalankan file, baik sebagai **biner** yang dieksekusi langsung oleh CPU maupun **skrip** yang dijalankan oleh interpreter seperti shell atau Python. Skrip biasanya diawali dengan **shebang (`#!`)** untuk menentukan interpreter yang digunakan.
     
-    ```
-    #!/usr/bin/perl
-    ```
+```
+#!/usr/bin/perl
+```
 
 Nonbinary executable files tanpa interpreter diasumsikan sebagai sh scripts. Kernel mengenali shebang (#!), tetapi jika interpreter tidak ditentukan dengan benar, kernel menolak file tersebut, dan shell mencoba menjalankannya sebagai shell script.
 Pada direktori, execute bit memungkinkan masuk atau melewati direktori tanpa menampilkan isinya. Kombinasi read + execute memungkinkan melihat isi direktori, sedangkan write + execute memungkinkan membuat, menghapus, dan mengganti nama file di dalamnya.
@@ -146,10 +146,10 @@ ls: membuat daftar dan memeriksa file
 
 Perintah ls digunakan untuk menampilkan dan memeriksa file serta direktori. Ls -l menampilkan detail file dalam format panjang, termasuk izin, jumlah hard link, pemilik, grup, ukuran, waktu modifikasi, dan nama file. Setiap direktori memiliki minimal dua hard link: . (diri sendiri) dan .. (induknya). Output ls untuk file perangkat berbeda dari file biasa.
     
-    ```
-    $ ls -l /dev/tty0
-    crw--w---- 1 root tty 4, 0 Mar  1  2020 /dev/tty0
-    ```
+```
+$ ls -l /dev/tty0
+crw--w---- 1 root tty 4, 0 Mar  1  2020 /dev/tty0
+```
 
 chmod: ubah hak akses
 
@@ -203,13 +203,13 @@ $ umask 022
 Model perizinan Unix tradisional memiliki keterbatasan, seperti sulitnya menetapkan banyak pemilik untuk satu file atau memberikan izin berbeda ke grup pengguna tertentu. Access Control Lists (ACL) memperluas model ini dengan memungkinkan file memiliki beberapa pemilik dan izin yang bervariasi untuk tiap grup pengguna.
 Setiap aturan dalam ACL disebut Access Control Entry (ACE), yang terdiri dari penentu pengguna/grup, topeng izin, dan tipe (izinkan atau tolak). Untuk melihat ACL suatu file, gunakan perintah getfacl, sedangkan untuk mengaturnya gunakan setfacl.
     
-    ```
-    $ getfacl /etc/passwd
-    ```
+```
+$ getfacl /etc/passwd
+```
 
-    ```
-    $ setfacl -m u:abdou:rw /etc/passwd
-    ```
+```
+$ setfacl -m u:abdou:rw /etc/passwd
+```
 Ada dua jenis ACL: ACL POSIX dan ACL NFSv4. ACL POSIX adalah ACL Unix tradisional, dan ACL NFSv4 adalah jenis ACL yang lebih baru dan lebih kuat.
 
 ## Implementasi ACL 
@@ -226,18 +226,18 @@ POSIX ACLs adalah ACL tradisional di Unix dan didukung oleh sebagian besar siste
   | mask::perms           | mask::rwx       | Maksimum yang diberikan   |
   | other::perms          | other::r--      | Semua pengguna lain       |
 
-    ```
-    $ setfacl -m user:abdou:rwx,group:users:rwx,other::r /home/abdou
+```
+$ setfacl -m user:abdou:rwx,group:users:rwx,other::r /home/abdou
 
-    $ getfacl --omit-header /home/abdou
+$ getfacl --omit-header /home/abdou
 
-    user::rwx
-    user:abdou:rwx
-    group::r-x
-    group:users:r-x
-    mask::rwx
-    other::r--
-    ```
+user::rwx
+user:abdou:rwx
+group::r-x
+group:users:r-x
+mask::rwx
+other::r--
+```
 
 ## ACL NFSv4
     
