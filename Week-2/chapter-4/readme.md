@@ -69,17 +69,17 @@ pkill -u abdoufermat # kill all processes owned by user abdoufermat
 ## PS: Proses Pemantauan
 Perintah ps adalah alat utama untuk memantau proses di sistem. Meskipun tampilannya bisa berbeda antarversi, fungsinya tetap sama, yaitu menampilkan informasi seperti PID, UID, prioritas, penggunaan memori, waktu CPU, dan status proses. Untuk melihat daftar proses secara lengkap, gunakan ps aux. Opsi a menampilkan proses dari semua pengguna, u memberikan detail lebih rinci, dan x menampilkan proses yang tidak terkait dengan terminal.
     
-    ```
-    $ ps aux | head -8
-    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-    root         1  0.0  0.0  22556  2584 ?        Ss   2019   0:02 /sbin/init
-    root         2  0.0  0.0      0     0 ?        S    2019   0:00 [kthreadd]
-    root         3  0.0  0.0      0     0 ?        I<   2019   0:00 [rcu_gp]
-    root         4  0.0  0.0      0     0 ?        I<   2019   0:00 [rcu_par_gp]
-    root         6  0.0  0.0      0     0 ?        I<   2019   0:00 [kworker/0:0H-kblockd]
-    root         8  0.0  0.0      0     0 ?        I<   2019   0:00 [mm_percpu_wq]
-    root         9  0.0  0.0      0     0 ?        S    2019   0:00 [ksoftirqd/0]
-    ```
+```
+$ ps aux | head -8
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  22556  2584 ?        Ss   2019   0:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    2019   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   2019   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   2019   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   2019   0:00 [kworker/0:0H-kblockd]
+root         8  0.0  0.0      0     0 ?        I<   2019   0:00 [mm_percpu_wq]
+root         9  0.0  0.0      0     0 ?        S    2019   0:00 [ksoftirqd/0]
+```
 
 ![img](/assets/week-2/ch4-2.png) 
 
