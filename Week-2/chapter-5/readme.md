@@ -96,7 +96,7 @@ Anda dapat menentukan jenis suatu file dengan menggunakan perintah file (ketik m
     ```
 Anda juga dapat menggunakan ls -ld, di mana opsi -d memaksa ls untuk menampilkan informasi tentang direktori itu sendiri, bukan isi direktori tersebut.
 
-[img](/assets/week-2/ch5-3.png)
+![img](/assets/week-2/ch5-3.png)
 
 File biasa menyimpan data tanpa struktur tertentu. Direktori berfungsi sebagai referensi ke file lain. Hard link memungkinkan satu file memiliki banyak nama, dan bisa dibuat menggunakan perintah ln.
 contoh:
