@@ -16,6 +16,7 @@
 </div>
 <br>
 
+
 ![img](/assets/week-2/ch5-1.png) 
 
 Sistem berkas berfungsi untuk mengelola penyimpanan dengan empat komponen utama: ruang nama (penamaan & hierarki), API (navigasi & manipulasi), model keamanan (proteksi & berbagi), dan implementasi (penghubung ke hardware). Sistem berkas populer di disk meliputi ext4, XFS, UFS, ZFS, dan Btrfs, sementara FAT & NTFS dipakai di Windows. Sistem berkas modern berusaha meningkatkan kecepatan, keandalan, atau menambahkan fitur baru di atas sistem berkas tradisional.
@@ -70,9 +71,9 @@ Sistem UNIX memiliki struktur pohon berkas yang kurang terorganisir dengan baik,
     - /usr menyimpan program standar yang tidak bersifat kritis bagi sistem, dokumentasi, dan pustaka 
     - /var berisi log sistem dan data yang sering berubah. 
     
-    /usr dan /var, kedua direktori ini harus tersedia agar sistem dapat masuk ke mode multiuser.
+/usr dan /var, kedua direktori ini harus tersedia agar sistem dapat masuk ke mode multiuser.
 
-    ![img](/assets/week-2/ch5-2.png)
+![img](/assets/week-2/ch5-2.png)
 
 
 ## Jenis-Jenis File
