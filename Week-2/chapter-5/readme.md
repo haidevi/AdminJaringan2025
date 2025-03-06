@@ -79,13 +79,13 @@ Sistem UNIX memiliki struktur pohon berkas yang kurang terorganisir dengan baik,
 
 Sebagian besar implementasi sistem berkas mendefinisikan tujuh jenis berkas:
 
-  1.     File biasa
-  2.     Direktori
-  3.     File perangkat karakter
-  4.     File perangkat blokir
-  5.     Soket domain lokal
-  6.     Pipa bernama (FIFO)
-  7.     Tautan simbolik
+- File biasa
+- Direktori
+- File perangkat karakter
+- File perangkat blokir
+- Soket domain lokal
+- Pipa bernama (FIFO)
+- Tautan simbolik
 
 Anda dapat menentukan jenis suatu file dengan menggunakan perintah file (ketik man file untuk informasi lebih lanjut).
     
@@ -93,12 +93,12 @@ Anda dapat menentukan jenis suatu file dengan menggunakan perintah file (ketik m
     $ file /bin/bash
     bin/bash: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=33a5554034feb2af38e8c75872058883b2988bc5, for GNU/Linux 3.2.0, stripped
     ```
-    Anda juga dapat menggunakan ls -ld, di mana opsi -d memaksa ls untuk menampilkan informasi tentang direktori itu sendiri, bukan isi direktori tersebut.
+Anda juga dapat menggunakan ls -ld, di mana opsi -d memaksa ls untuk menampilkan informasi tentang direktori itu sendiri, bukan isi direktori tersebut.
 
     ![img](/assets/week-2/ch5-3.png)
 
-    File biasa menyimpan data tanpa struktur tertentu. Direktori berfungsi sebagai referensi ke file lain. Hard link memungkinkan satu file memiliki banyak nama, dan bisa dibuat menggunakan perintah ln.
-    contoh:
+File biasa menyimpan data tanpa struktur tertentu. Direktori berfungsi sebagai referensi ke file lain. Hard link memungkinkan satu file memiliki banyak nama, dan bisa dibuat menggunakan perintah ln.
+contoh:
     ```
     $ ln /etc/passwd /tmp/passwd
     ```
