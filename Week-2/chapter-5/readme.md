@@ -18,7 +18,8 @@
 
 ![img](/assets/week-2/ch5-1.png) 
 
-    Sistem berkas berfungsi untuk mengelola penyimpanan dengan empat komponen utama: ruang nama (penamaan & hierarki), API (navigasi & manipulasi), model keamanan (proteksi & berbagi), dan implementasi (penghubung ke hardware). Sistem berkas populer di disk meliputi ext4, XFS, UFS, ZFS, dan Btrfs, sementara FAT & NTFS dipakai di Windows. Sistem berkas modern berusaha meningkatkan kecepatan, keandalan, atau menambahkan fitur baru di atas sistem berkas tradisional.
+Sistem berkas berfungsi untuk mengelola penyimpanan dengan empat komponen utama: ruang nama (penamaan & hierarki), API (navigasi & manipulasi), model keamanan (proteksi & berbagi), dan implementasi (penghubung ke hardware). Sistem berkas populer di disk meliputi ext4, XFS, UFS, ZFS, dan Btrfs, sementara FAT & NTFS dipakai di Windows. Sistem berkas modern berusaha meningkatkan kecepatan, keandalan, atau menambahkan fitur baru di atas sistem berkas tradisional.
+
 ## Nama Jalan
 Dalam dunia teknis, istilah yang benar adalah direktori, bukan folder. Nama path adalah jalur yang menunjukkan lokasi file dalam sistem berkas. Path bisa absolut (misalnya /home/username/file.txt) atau relatif (misalnya ./file.txt).
 
@@ -77,13 +78,14 @@ Sistem UNIX memiliki struktur pohon berkas yang kurang terorganisir dengan baik,
 ## Jenis-Jenis File
 
 Sebagian besar implementasi sistem berkas mendefinisikan tujuh jenis berkas:
-1.     File biasa
-2.     Direktori
-3.     File perangkat karakter
-4.     File perangkat blokir
-5.     Soket domain lokal
-6.     Pipa bernama (FIFO)
-7.     Tautan simbolik
+
+  1.     File biasa
+  2.     Direktori
+  3.     File perangkat karakter
+  4.     File perangkat blokir
+  5.     Soket domain lokal
+  6.     Pipa bernama (FIFO)
+  7.     Tautan simbolik
 
 Anda dapat menentukan jenis suatu file dengan menggunakan perintah file (ketik man file untuk informasi lebih lanjut).
     
@@ -128,32 +130,33 @@ Pada file biasa, **read (r)** memungkinkan membaca file, **write (w)** memungkin
     ```
 
 Nonbinary executable files tanpa interpreter diasumsikan sebagai sh scripts. Kernel mengenali shebang (#!), tetapi jika interpreter tidak ditentukan dengan benar, kernel menolak file tersebut, dan shell mencoba menjalankannya sebagai shell script.
-    Pada direktori, execute bit memungkinkan masuk atau melewati direktori tanpa menampilkan isinya. Kombinasi read + execute memungkinkan melihat isi direktori, sedangkan write + execute memungkinkan membuat, menghapus, dan mengganti nama file di dalamnya.
+Pada direktori, execute bit memungkinkan masuk atau melewati direktori tanpa menampilkan isinya. Kombinasi read + execute memungkinkan melihat isi direktori, sedangkan write + execute memungkinkan membuat, menghapus, dan mengganti nama file di dalamnya.
 
-    The setuid and setgid bits
+The setuid and setgid bits
 
-    Setuid (4000) dan setgid (2000) adalah bit izin khusus di Unix. Setuid: Saat diaktifkan pada file, eksekusi file akan menggunakan hak akses pemilik file, bukan pengguna yang menjalankannya. Setgid: Saat diaktifkan pada file, eksekusi file akan menggunakan hak akses grup file. Jika diterapkan pada direktori, file baru di dalamnya akan mewarisi grup direktori, bukan grup default pembuat file. Setgid pada direktori mempermudah berbagi file dalam satu grup pengguna.
+Setuid (4000) dan setgid (2000) adalah bit izin khusus di Unix. Setuid: Saat diaktifkan pada file, eksekusi file akan menggunakan hak akses pemilik file, bukan pengguna yang menjalankannya. Setgid: Saat diaktifkan pada file, eksekusi file akan menggunakan hak akses grup file. Jika diterapkan pada direktori, file baru di dalamnya akan mewarisi grup direktori, bukan grup default pembuat file. Setgid pada direktori mempermudah berbagi file dalam satu grup pengguna.
 
-    The sticky bit
+The sticky bit
 
-    **Sticky bit** (1000) mencegah pengguna menghapus atau mengganti nama file yang bukan miliknya dalam direktori bersama seperti **`/tmp`**, meskipun memiliki izin menulis.
+Sticky bit (1000) mencegah pengguna menghapus atau mengganti nama file yang bukan miliknya dalam direktori bersama seperti **`/tmp`**, meskipun memiliki izin menulis.
 
-    ls: membuat daftar dan memeriksa file
+ls: membuat daftar dan memeriksa file
 
-    Perintah ls digunakan untuk menampilkan dan memeriksa file serta direktori. Ls -l menampilkan detail file dalam format panjang, termasuk izin, jumlah hard link, pemilik, grup, ukuran, waktu modifikasi, dan nama file. Setiap direktori memiliki minimal dua hard link: . (diri sendiri) dan .. (induknya). Output ls untuk file perangkat berbeda dari file biasa.
+Perintah ls digunakan untuk menampilkan dan memeriksa file serta direktori. Ls -l menampilkan detail file dalam format panjang, termasuk izin, jumlah hard link, pemilik, grup, ukuran, waktu modifikasi, dan nama file. Setiap direktori memiliki minimal dua hard link: . (diri sendiri) dan .. (induknya). Output ls untuk file perangkat berbeda dari file biasa.
     
     ```
     $ ls -l /dev/tty0
     crw--w---- 1 root tty 4, 0 Mar  1  2020 /dev/tty0
     ```
 
-    chmod: ubah hak akses
+chmod: ubah hak akses
 
-    Perintah chmod mengubah mode sebuah berkas. Anda dapat menggunakan notasi oktal atau notasi simbolik.
+Perintah chmod mengubah mode sebuah berkas. Anda dapat menggunakan notasi oktal atau notasi simbolik.
      ![img](/assets/week-2/ch5-5.png)
     
-    Contoh-contoh dari sintaks mnemonic chmod:
-    | Specifier  | Meaning                                                              |
+Contoh-contoh dari sintaks mnemonic chmod:
+
+| Specifier  | Meaning                                                                  |
 | ---------- | -------------------------------------------------------------------      |
 | u+w        | Menambahkan izin menulis untuk pemilik berkas                            |
 | ug=rw,o=r  | Memberikan izin r/w kepada pemilik dan grup, dan izin r kepada orang lain|
@@ -205,7 +208,7 @@ Setiap aturan dalam ACL disebut Access Control Entry (ACE), yang terdiri dari pe
     ```
     $ setfacl -m u:abdou:rw /etc/passwd
     ```
-    Ada dua jenis ACL: ACL POSIX dan ACL NFSv4. ACL POSIX adalah ACL Unix tradisional, dan ACL NFSv4 adalah jenis ACL yang lebih baru dan lebih kuat.
+Ada dua jenis ACL: ACL POSIX dan ACL NFSv4. ACL POSIX adalah ACL Unix tradisional, dan ACL NFSv4 adalah jenis ACL yang lebih baru dan lebih kuat.
 
 ## Implementasi ACL 
 ACL dapat dikelola oleh kernel, sistem berkas, atau perangkat lunak tingkat tinggi seperti NFS dan SMB untuk mengontrol akses ke file dan direktori.
