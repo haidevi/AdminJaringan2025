@@ -37,7 +37,7 @@ Setiap proses juga memiliki PPID (Parent Process ID), yaitu PID dari proses indu
 Selain itu, terdapat UID (User ID), yaitu ID pengguna yang memulai proses, serta EUID (Effective User ID), yang menentukan hak akses proses terhadap sumber daya seperti file dan port jaringan.
 
 ## Daur Hidup Proses
-    Daur hidup sebuah proses dimulai ketika sebuah proses membuat salinan dirinya menggunakan panggilan sistem fork. Proses baru ini memiliki PID berbeda dan informasi akuntansi sendiri. Di Linux, fork sebenarnya memanggil clone, yang memiliki fitur tambahan untuk menangani thread.
+Daur hidup sebuah proses dimulai ketika sebuah proses membuat salinan dirinya menggunakan panggilan sistem fork. Proses baru ini memiliki PID berbeda dan informasi akuntansi sendiri. Di Linux, fork sebenarnya memanggil clone, yang memiliki fitur tambahan untuk menangani thread.
 Saat sistem booting, kernel secara otomatis membuat beberapa proses, termasuk init atau systemd (proses dengan PID 1). Proses ini menjalankan skrip startup sistem dan menjadi induk bagi semua proses lain yang dibuat di sistem.
 
 ## Sinyal
@@ -52,7 +52,8 @@ Sinyal adalah mekanisme untuk mengirim pemberitahuan ke suatu proses saat terjad
     ![img](/assets/week-2/ch4-1.png) 
 
 ## Kill: Mengirim Sinyal
-    Perintah kill digunakan untuk mengirim sinyal ke proses, biasanya untuk menghentikannya. Secara default, `kill` mengirim sinyal TERM, tetapi proses masih bisa menangkap atau mengabaikannya. Jika ingin memastikan proses benar-benar mati, gunakan kill -9, yang mengirim sinyal KILL yang tidak bisa diblokir. Selain itu, ada `killall` yang menghentikan proses berdasarkan nama, meskipun tidak tersedia di semua sistem. Alternatif lain adalah `pkill`, yang lebih fleksibel karena bisa menghentikan proses berdasarkan kriteria tertentu, seperti semua proses milik pengguna tertentu dengan perintah pkill -u user.
+Perintah kill digunakan untuk mengirim sinyal ke proses, biasanya untuk menghentikannya. Secara default, `kill` mengirim sinyal TERM, tetapi proses masih bisa menangkap atau mengabaikannya. Jika ingin memastikan proses benar-benar mati, gunakan kill -9, yang mengirim sinyal KILL yang tidak bisa diblokir. Selain itu, ada `killall` yang menghentikan proses berdasarkan nama, meskipun tidak tersedia di semua sistem. Alternatif lain adalah `pkill`, yang lebih fleksibel karena bisa menghentikan proses berdasarkan kriteria tertentu, seperti semua proses milik pengguna tertentu dengan perintah pkill -u user.
+
 ```
 kill [-signal] pid
 ```
@@ -66,7 +67,8 @@ pkill -u abdoufermat # kill all processes owned by user abdoufermat
 ```
 
 ## PS: Proses Pemantauan
-    Perintah ps adalah alat utama untuk memantau proses di sistem. Meskipun tampilannya bisa berbeda antarversi, fungsinya tetap sama, yaitu menampilkan informasi seperti PID, UID, prioritas, penggunaan memori, waktu CPU, dan status proses. Untuk melihat daftar proses secara lengkap, gunakan ps aux. Opsi a menampilkan proses dari semua pengguna, u memberikan detail lebih rinci, dan x menampilkan proses yang tidak terkait dengan terminal.
+Perintah ps adalah alat utama untuk memantau proses di sistem. Meskipun tampilannya bisa berbeda antarversi, fungsinya tetap sama, yaitu menampilkan informasi seperti PID, UID, prioritas, penggunaan memori, waktu CPU, dan status proses. Untuk melihat daftar proses secara lengkap, gunakan ps aux. Opsi a menampilkan proses dari semua pengguna, u memberikan detail lebih rinci, dan x menampilkan proses yang tidak terkait dengan terminal.
+    
     ```
     $ ps aux | head -8
     USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
@@ -79,35 +81,35 @@ pkill -u abdoufermat # kill all processes owned by user abdoufermat
     root         9  0.0  0.0      0     0 ?        S    2019   0:00 [ksoftirqd/0]
     ```
 
-    ![img](/assets/week-2/ch4-2.png) 
+![img](/assets/week-2/ch4-2.png) 
 
 ## Pemantauan Interaktif dengan Top
     
 Perintah top menampilkan informasi sistem dan daftar proses secara real-time, dengan pembaruan setiap 1-2 detik. Pengguna dapat menyesuaikan tampilan dan menyimpannya untuk digunakan kembali setelah restart. Alternatifnya, ada htop, yang menawarkan tampilan lebih interaktif dengan kemampuan menggulir vertikal dan horizontal, serta antarmuka yang lebih intuitif dibandingkan top. htop juga memungkinkan pengguna melihat perintah lengkap yang digunakan oleh setiap proses.
 
 ## Nice dan Renice: Mengubah Prioritas
-    Nice adalah nilai yang menentukan prioritas suatu proses dalam persaingan mendapatkan CPU. Nilai niceness yang lebih tinggi berarti prioritas lebih rendah, sementara nilai lebih rendah atau negatif berarti prioritas lebih tinggi. Di Linux, nilainya berkisar dari -20 hingga +19, sedangkan di FreeBSD dari -20 hingga +20. Proses dengan prioritas tinggi mendapatkan lebih banyak waktu CPU dibandingkan proses dengan prioritas rendah. Jika menjalankan proses yang membutuhkan banyak CPU di latar belakang, menaikkan nilai niceness dapat membantu proses lain tetap berjalan lancar tanpa terganggu.
+Nice adalah nilai yang menentukan prioritas suatu proses dalam persaingan mendapatkan CPU. Nilai niceness yang lebih tinggi berarti prioritas lebih rendah, sementara nilai lebih rendah atau negatif berarti prioritas lebih tinggi. Di Linux, nilainya berkisar dari -20 hingga +19, sedangkan di FreeBSD dari -20 hingga +20. Proses dengan prioritas tinggi mendapatkan lebih banyak waktu CPU dibandingkan proses dengan prioritas rendah. Jika menjalankan proses yang membutuhkan banyak CPU di latar belakang, menaikkan nilai niceness dapat membantu proses lain tetap berjalan lancar tanpa terganggu.
 ## Sistem Berkas/Proc
-    Versi Linux ps dan top membaca informasi status proses dari direktori /proc, sebuah sistem berkas semu di mana kernel menampilkan berbagai informasi menarik tentang status sistem.
+Versi Linux ps dan top membaca informasi status proses dari direktori /proc, sebuah sistem berkas semu di mana kernel menampilkan berbagai informasi menarik tentang status sistem.
 
 Terlepas dari namanya, /proc berisi informasi lain selain proses (statistik yang dihasilkan oleh sistem, dll).
 
 Proses diwakili oleh direktori dalam /proc, dan setiap proses memiliki direktori yang diberi nama sesuai dengan PID-nya. Direktori /proc berisi berbagai macam berkas yang menyediakan informasi tentang proses, seperti baris perintah, variabel lingkungan, deskriptor berkas, dan sebagainya.
     
-    ![img](/assets/week-2/ch4-3.png)
+![img](/assets/week-2/ch4-3.png)
 
 ## Strace and Truss
-    Untuk mengetahui apa yang sedang dilakukan oleh sebuah proses, Anda dapat menggunakan strace pada Linux atau truss pada FreeBSD. Perintah-perintah ini melacak panggilan sistem dan sinyal. Perintah-perintah ini dapat digunakan untuk men-debug sebuah program atau untuk memahami apa yang dilakukan oleh sebuah program.
+Untuk mengetahui apa yang sedang dilakukan oleh sebuah proses, Anda dapat menggunakan strace pada Linux atau truss pada FreeBSD. Perintah-perintah ini melacak panggilan sistem dan sinyal. Perintah-perintah ini dapat digunakan untuk men-debug sebuah program atau untuk memahami apa yang dilakukan oleh sebuah program.
 
 Sebagai contoh, log berikut ini dihasilkan oleh strace yang dijalankan pada sebuah salinan aktif dari top (yang berjalan sebagai PID 5810):
 
 ## Proses yang Berhenti
-    Kadang-kadang sebuah proses akan berhenti merespon sistem dan berjalan secara liar. Proses-proses ini mengabaikan prioritas penjadwalan mereka dan bersikeras mengambil 100% dari CPU. Karena proses lain hanya bisa mendapatkan akses terbatas ke CPU, mesin mulai berjalan sangat lambat. Ini disebut proses yang kabur.
+Terkadang sebuah proses akan berhenti merespon sistem dan berjalan secara liar. Proses-proses ini mengabaikan prioritas penjadwalan mereka dan bersikeras mengambil 100% dari CPU. Karena proses lain hanya bisa mendapatkan akses terbatas ke CPU, mesin mulai berjalan sangat lambat. Ini disebut proses yang kabur.
 
 Perintah kill dapat digunakan untuk menghentikan proses yang kabur. Jika proses tidak merespon sinyal TERM, Anda dapat menggunakan sinyal KILL untuk menghentikannya
 
 ## Proses Berkala
-    cron: perintah penjadwalan
+cron: perintah penjadwalan
 
 Daemon cron (crond pada RedHat: ya, orang aneh!!) adalah alat tradisional untuk menjalankan perintah pada jadwal yang telah ditentukan. Ia dimulai saat sistem melakukan booting dan berjalan selama sistem hidup.
 
@@ -120,7 +122,7 @@ Sebuah berkas crontab memiliki lima field untuk menentukan hari, tanggal dan wak
 
 
 ## Pengatur Waktu Systemd
-    Timer systemd adalah berkas konfigurasi unit yang namanya berakhiran .timer. timer systemd dapat digunakan sebagai alternatif untuk pekerjaan cron. Mereka lebih fleksibel dan lebih kuat daripada pekerjaan cron.
+Timer systemd adalah berkas konfigurasi unit yang namanya berakhiran .timer. timer systemd dapat digunakan sebagai alternatif untuk pekerjaan cron. Mereka lebih fleksibel dan lebih kuat daripada pekerjaan cron.
 
 Sebuah unit timer diaktifkan oleh unit layanan yang sesuai. Unit layanan dipicu oleh unit pengatur waktu pada waktu yang ditentukan dalam unit pengatur waktu. Unit pengatur waktu juga dapat diaktifkan oleh boot sistem atau oleh suatu peristiwa.
 
