@@ -219,6 +219,7 @@ $ umask 022
     ```
 
 ## ACL NFSv4
+    
     ACL NFSv4 adalah jenis ACL yang lebih baru dan lebih kuat, didukung oleh beberapa sistem operasi berbasis Unix seperti Linux dan FreeBSD. Mirip dengan POSIX ACLs, tetapi memiliki fitur tambahan, seperti default ACL, yang secara otomatis menetapkan izin untuk file dan direktori baru.
 
 
