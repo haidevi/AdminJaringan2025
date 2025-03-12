@@ -84,24 +84,24 @@ B.	Instalisasi Samba
     ![img](/assets/week-3/samba/22samba.png)
 
 
-###Rangkuman Package Management:
+### Rangkuman Package Management:
 
 Package management adalah proses untuk mengelola perangkat lunak yang terinstal pada sistem operasi, termasuk instalisasi, pembaruan, penghapusan dan pemeliharaan depedensi yang dibutuhkan oleh perangkat lunak tersebut. Berdasarkan referensi dari buku the begginers handbook Debian 12, terdapat cara dan alat yang digunakan dalam manajemen paket di sistem Debian dan distribusi berbasis Debian.
 
-###APT (Advanced Package Tool)
+### APT (Advanced Package Tool)
 
 APT adalah manajer paket yang digunakan untuk menginstal, memperbarui, dan menghapus paket perangkat lunak dalam sistem Debian dan distribusi berbasis Debian. APT memudahkan penngelolaan perangkat lunak dengan menyediakan perintah seperti sudo apt install nama_paket untuk menginstal aplikasi. Sudo apt update untuk memperbarui daftar paket. Sudo apt upgrade untuk memperbarui aplikasi yang sudah terinstal.  APT menangani ketergantungan secara otomatis, sehingga sistem dapat menjaga konsistensi antara aplikasi yang terinstal dan dependensinya.
 
-###dpkg
+### dpkg
 
 Dpkg adalah alat manajemen paket Tingkat rendah untuk menginstall paket berformat .deb. Perintah utama instalisasi dengan dpkg adalah sudo dpkg -I nama_paket.deb untuk menginstal paket .deb dan sudo apt install -f untuk memperbaiki ketergantungan yang hilang setelah instalasi dengan dpkg.
 dpkg tidak menangani ketergantungan secara otomatis, sehingga sering kali perlu dilengkapi dengan APT untuk menangani ketergantungan.
 
-###Snap 
+### Snap 
 
 Snap adalah sistem paket yang memungkinkan aplikasi dan semua dependensinya berada dalam satu paket. Snap memungkinkan instalasi aplikasi di berbagai distribusi Linux. Untuk menggunakan Snap dapat menggunakan perintah berikut, sudo apt install snapd untuk menginstal Snap,  sudo snap install nama_aplikasi untuk menginstal aplikasi Snap. Snap menawarkan manfaat portabilitas karena aplikasi yang dikemas dengan Snap dapat berjalan di berbagai distribusi Linux tanpa perlu konfigurasi tambahan.
 
-###Flatpak 
+### Flatpak 
 
 Flatpak adalah sistem manajemen aplikasi yang mengisolasi aplikasi dalam "sandbox" untuk meningkatkan keamanan. Untuk menggunakan Flatpak dapat menggunakan perintah seperti, sudo apt install flatpak untuk menginstal Flatpak, flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo untuk menambahkan repositori aplikasi, flatpak install flathub nama_aplikasi untuk menginstal aplikasi Flatpak. Flatpak juga memungkinkan aplikasi berjalan dengan ketergantungan yang terisolasi, mengurangi risiko konflik antar aplikasi.
 
@@ -110,11 +110,11 @@ Paket eksternal .deb yang tidak tersedia di repositori APT dapat diinstal dengan
 
 ![img](/assets/week-3/gdebi.png)
 
-###Membersihkan Sistem 
+### Membersihkan Sistem 
 
 Pembersihan sistem adalah langkah penting dalam manajemen paket untuk menghemat ruang disk dan menjaga kinerja sistem. Beberapa perintah penting untuk membersihkan sistem seperti, sudo apt clean untuk menghapus cache paket yang diunduh, sudo apt autoremove --purge untuk menghapus paket yang tidak lagi diperlukan, rm -Rf ~/.cache/* untuk menghapus cache aplikasi, rm -Rf ~/.thumbnails untuk menghapus thumbnail yang tidak terpakai.
 
-###Debian Branches (Sid) 
+### Debian Branches (Sid) 
 
 Debian memiliki beberapa cabang distribusi dengan stabilitas yang berbeda:
 •	Stable adalah versi stabil yang siap digunakan sehari-hari.
@@ -122,15 +122,15 @@ Debian memiliki beberapa cabang distribusi dengan stabilitas yang berbeda:
 •	Unstable (Sid) adalah versi yang tidak stabil dengan fitur terbaru, namun dapat berisiko.
 Penting untuk memahami perbedaan ini saat memilih distribusi untuk sistem Debian, terutama dalam konteks pembaruan dan stabilitas sistem.
 
-###Mengelola Flatpak 
+### Mengelola Flatpak 
 
 Flatpak memungkinkan aplikasi berjalan dalam lingkungan terisolasi dan dapat dikelola dengan perintah seperti: flatpak search nama_aplikasi untuk mencari aplikasi, flatpak install flathub nama_aplikasi untuk menginstal aplikasi dari Flathub, flatpak uninstall nama_aplikasi untuk menghapus aplikasi, flatpak update untuk memperbarui aplikasi yang terinstal, flatpak run nama_aplikasi untuk menjalankan aplikasi. Repositori Flatpak seperti Flathub dan KDE Apps menyediakan akses ke berbagai aplikasi dengan dependensi lengkap.
 
-###Kesimpulan
+### Kesimpulan
 
 Manajemen paket adalah aspek penting dari pemeliharaan sistem Linux, memastikan perangkat lunak yang terinstal diperbarui, aman, dan tidak mengganggu stabilitas sistem. APT, dpkg, Snap, dan Flatpak adalah alat utama yang digunakan di Debian dan distribusi berbasis Debian, masing-masing dengan keunggulan dan kegunaannya sendiri dalam mengelola perangkat lunak.
 
-##Referensi:
+## Referensi:
 
 •	https://www.server-world.info/en/note?os=Debian_12&p=ntp&f=1
 •	https://www.ntppool.org/en/zone/id
