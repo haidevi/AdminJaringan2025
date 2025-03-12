@@ -133,6 +133,9 @@ Manajemen paket adalah aspek penting dari pemeliharaan sistem Linux, memastikan 
 ## Referensi:
 
 •	https://www.server-world.info/en/note?os=Debian_12&p=ntp&f=1
+
 •	https://www.ntppool.org/en/zone/id
+
 •	https://www.server-world.info/en/note?os=Debian_12&p=samba&f=1
+
 •	The begginers handbook Debian 12: Enterprise Technology Hybrid Online Learning - ETHOL 
