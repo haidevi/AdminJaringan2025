@@ -105,10 +105,9 @@ Snap adalah sistem paket yang memungkinkan aplikasi dan semua dependensinya bera
 
 Flatpak adalah sistem manajemen aplikasi yang mengisolasi aplikasi dalam "sandbox" untuk meningkatkan keamanan. Untuk menggunakan Flatpak dapat menggunakan perintah seperti, sudo apt install flatpak untuk menginstal Flatpak, flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo untuk menambahkan repositori aplikasi, flatpak install flathub nama_aplikasi untuk menginstal aplikasi Flatpak. Flatpak juga memungkinkan aplikasi berjalan dengan ketergantungan yang terisolasi, mengurangi risiko konflik antar aplikasi.
 
-Menginstal dari paket eksternal “’.deb”
-Paket eksternal .deb yang tidak tersedia di repositori APT dapat diinstal dengan menggunakan dpkg atau aplikasi grafis seperti GDebi. Ini berguna untuk menginstal aplikasi yang tidak tersedia di repositori resmi. Menggunakan  GDebi (grafis) atau dpkg (terminal) untuk menginstal file .deb.
+### Menginstal dari paket eksternal “’.deb”
 
-![img](/assets/week-3/gdebi.png)
+Paket eksternal .deb yang tidak tersedia di repositori APT dapat diinstal dengan menggunakan dpkg atau aplikasi grafis seperti GDebi. Ini berguna untuk menginstal aplikasi yang tidak tersedia di repositori resmi. Menggunakan  GDebi (grafis) atau dpkg (terminal) untuk menginstal file .deb.
 
 ### Membersihkan Sistem 
 
