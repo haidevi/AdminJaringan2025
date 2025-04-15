@@ -60,6 +60,7 @@
 ## Konfigurasi NTP
 
 1. Instalasi NTP client.
+
 ![img](/assets/week-6/ntp/1.png)
 
 2. Menambahkan server NTP.
