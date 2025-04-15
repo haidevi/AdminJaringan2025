@@ -59,10 +59,8 @@
 
 ## Konfigurasi NTP
 
-
 1. Instalasi NTP client.
 ![img](/assets/week-6/ntp/1.png)
-
 
 2. Menambahkan server NTP.
 ![img](/assets/week-6/ntp/2-1.png)
@@ -94,7 +92,6 @@ Mengecek akses samba pada VM 1 dengan ip menggunakan VM 2.
 ![img](/assets/week-6/samba/4.png)
 
 ## Konfigurasi Bind9
-
 
 1. Instalasi BIND9 
 ![img](/assets/week-6/bind/1.png)
