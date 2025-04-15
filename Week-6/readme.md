@@ -94,9 +94,11 @@ Mengecek akses samba pada VM 1 dengan ip menggunakan VM 2.
 ## Konfigurasi Bind9
 
 1. Instalasi BIND9 
+
 ![img](/assets/week-6/bind/1.png)
 
 2. Mengonfigurasi BIND dan menambahkan `include "/etc/bind/named.conf.internal-zones"`. 
+
 ![img](/assets/week-6/bind/2-1.png)
 ![img](/assets/week-6/bind/2.png)
 
