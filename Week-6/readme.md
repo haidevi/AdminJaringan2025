@@ -64,6 +64,7 @@
 ![img](/assets/week-6/ntp/1.png)
 
 2. Menambahkan server NTP.
+
 ![img](/assets/week-6/ntp/2-1.png)
 ![img](/assets/week-6/ntp/2.png)
 
