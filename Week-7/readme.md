@@ -53,6 +53,7 @@
    ![img](/assets/week-7/1bukawinbox.jpeg)
 
 9. Melakukan ping
+
    ![img](/assets/week-7/1ping.jpeg)
    ![img](/assets/week-7/2ping.jpeg)
    ![img](/assets/week-7/3ping.jpeg)
