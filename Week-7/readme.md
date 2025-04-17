@@ -72,6 +72,6 @@
   
 10. Melakukan testing ping. Jika tidak terdapat pesan request timed out, maka ping berhasil. Sebaliknya, jika terdapat pesan net unreachable, maka ping tidak berhasil.
    
-   ![img](/assets/week-7/3ping.jpeg)
-   ![img](/assets/week-7/4ping.jpeg)
-   ![img](/assets/week-7/5ping.jpeg)
+    ![img](/assets/week-7/3ping.jpeg)
+    ![img](/assets/week-7/4ping.jpeg)
+    ![img](/assets/week-7/5ping.jpeg)
