@@ -55,8 +55,11 @@
    ![img](/assets/week-7/downloadwinbox.png)
 
 7. Membuka WinBox dengan perintah berikut.
+
    ![img](/assets/week-7/01bukawinbox.png)
+
    Melakukan connecting ke  perangkat mikrotik.
+
    ![img](/assets/week-7/1bukawinbox.jpeg)
 
 8. Mengecek ip route yang menampilkan daftar route.
@@ -68,6 +71,7 @@
    ![img](/assets/week-7/2ping.jpeg)
   
 10. Melakukan testing ping. Jika tidak terdapat pesan request timed out, maka ping berhasil. Sebaliknya, jika terdapat pesan net unreachable, maka ping tidak berhasil.
+   
    ![img](/assets/week-7/3ping.jpeg)
    ![img](/assets/week-7/4ping.jpeg)
    ![img](/assets/week-7/5ping.jpeg)
