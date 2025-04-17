@@ -25,29 +25,36 @@
 ## Konfigurasi WinBox
 
 2. Melakukan pengecekan ip
-![img](/assets/week-7/cekip.jpeg)
+
+   ![img](/assets/week-7/cekip.jpeg)
 
 3. Terdapat error
-![img](/assets/week-7/error.jpeg)
+
+   ![img](/assets/week-7/error.jpeg)
 
 4. Mengatasi error
-![img](/assets/week-7/atasierror.jpeg)
+
+   ![img](/assets/week-7/atasierror.jpeg)
 
 5. Melakukan update
-![img](/assets/week-7/berhasilupdate.jpeg)
+
+   ![img](/assets/week-7/berhasilupdate.jpeg)
 
 6. Melakukan install wine
-![img](/assets/week-7/bukawinbox.jpeg)
+
+   ![img](/assets/week-7/bukawinbox.jpeg)
 
 7. Mengunduh WinBox
-![img](/assets/week-7/downloadwinbox.png)
+
+   ![img](/assets/week-7/downloadwinbox.png)
 
 8. Membuka WinBox
-![img](/assets/week-7/1bukawinbox.jpeg)
+
+   ![img](/assets/week-7/1bukawinbox.jpeg)
 
 9. Melakukan ping
-![img](/assets/week-7/1ping.jpeg)
-![img](/assets/week-7/2ping.jpeg)
-![img](/assets/week-7/3ping.jpeg)
-![img](/assets/week-7/4ping.jpeg)
-![img](/assets/week-7/5ping.jpeg)
+   ![img](/assets/week-7/1ping.jpeg)
+   ![img](/assets/week-7/2ping.jpeg)
+   ![img](/assets/week-7/3ping.jpeg)
+   ![img](/assets/week-7/4ping.jpeg)
+   ![img](/assets/week-7/5ping.jpeg)
