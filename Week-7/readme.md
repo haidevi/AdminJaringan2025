@@ -22,40 +22,52 @@
 </div> 
 <br>
 
-## Konfigurasi WinBox
+## Tugas
 
-2. Melakukan pengecekan ip
+  ![img](/assets/week-7/Tugas.png)
+
+### Konfigurasi WinBox
+
+1. Melakukan pengecekan ip
 
    ![img](/assets/week-7/cekip.jpeg)
 
-3. Terdapat error
+2. Terdapat error
 
    ![img](/assets/week-7/error.jpeg)
 
-4. Mengatasi error
+3. Mengatasi error
 
    ![img](/assets/week-7/atasierror.jpeg)
 
-5. Melakukan update
+4. Melakukan update
+
+   ![img](/assets/week-7/aptupdate.png)
 
    ![img](/assets/week-7/berhasilupdate.jpeg)
 
-6. Melakukan install wine
+5. Melakukan install wine
 
-   ![img](/assets/week-7/bukawinbox.jpeg)
+   ![img](/assets/week-7/installwine.png)
 
-7. Mengunduh WinBox
+6. Mengunduh WinBox versi windows 64 bit.
 
    ![img](/assets/week-7/downloadwinbox.png)
 
-8. Membuka WinBox
-
+7. Membuka WinBox dengan perintah berikut.
+   ![img](/assets/week-7/01bukawinbox.png)
+   Melakukan connecting ke  perangkat mikrotik.
    ![img](/assets/week-7/1bukawinbox.jpeg)
 
-9. Melakukan ping
+8. Mengecek ip route yang menampilkan daftar route.
 
    ![img](/assets/week-7/1ping.jpeg)
+
+9. Menambahkan IP device beserta gateway kelompok lain.
+   
    ![img](/assets/week-7/2ping.jpeg)
+  
+10. Melakukan testing ping. Jika tidak terdapat pesan request timed out, maka ping berhasil. Sebaliknya, jika terdapat pesan net unreachable, maka ping tidak berhasil.
    ![img](/assets/week-7/3ping.jpeg)
    ![img](/assets/week-7/4ping.jpeg)
    ![img](/assets/week-7/5ping.jpeg)
